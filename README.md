@@ -1,8 +1,8 @@
 Pei Zhao's personal algorithm projects
-===
-
-Inversion count of two arrays
 ---
+
+### Inversion count of two arrays
+
 
 Inversion count of two arrays implemented with Divide and Conquer
 algorithm.
