@@ -1,5 +1,5 @@
-from inversion_count import inversion_count
 import unittest
+from inversion_count import inversion_count
 
 class TestInversionCount(unittest.TestCase):
 
