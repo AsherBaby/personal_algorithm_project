@@ -53,6 +53,7 @@ for use.
 
 Hash Heap data structure has the following API with complete
 O( log(n) ) running time for each operation:
+
 1. add(node) -> None
 2. poll() -> min node
 3. update(node) -> None
@@ -61,4 +62,4 @@ O( log(n) ) running time for each operation:
 With the help of hash heap, the Dijkstra algorithm has running time of
 O( m log(n) ).
 
-### More topics... 
+### More topics...
