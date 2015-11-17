@@ -65,4 +65,24 @@ O( log(n) ) running time for each operation:
 With the help of hash heap, the Dijkstra algorithm has running time of
 O( m log(n) ).
 
+### All Pairs Shortest Paths (w/o test cases)
+All pairs shortest paths problem can be considered as upgrade of the
+single source shortest path problem. Two well-known algorithms for
+single source shortest path problem:
+
+1. Dijkstra Algorithm: non-negative edge, O( m log(n) )
+2. Bellman-Ford Algorithm: O( mn )
+
+For the all pairs shortest paths problem, there are also two mature  
+algorithms:
+
+1. Floyd-Warshall Algorithm: O ( n^3 ), a DP algorithm
+2. Johnson's Algorithm: O( mn log(n) )
+
+Worthy of mentioning is that, Johnson's algorithm beat Floyd-Warshall
+algorithm for sparse graph. For dense graph, I personally recommend
+Floyd-Warshall algorithm, because it is extremely easy to code, if
+the state function is being understood, just three loops.
+
+
 ### More topics...
