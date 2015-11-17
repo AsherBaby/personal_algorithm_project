@@ -84,5 +84,11 @@ algorithm for sparse graph. For dense graph, I personally recommend
 Floyd-Warshall algorithm, because it is extremely easy to code, if
 the state function is being understood, just three loops.
 
+### Traveling Salesman Problem (TSP)
+
+Traveling Salesman Problem is slightly explored here. A DP solution
+with O ( n^2 * 2^n ) is developed just to taste the hardness of a
+NP-Complete problem. 
+
 
 ### More topics...
