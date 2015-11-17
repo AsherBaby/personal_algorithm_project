@@ -65,6 +65,7 @@ O( log(n) ) running time for each operation:
 With the help of hash heap, the Dijkstra algorithm has running time of
 O( m log(n) ).
 
+---
 ### All Pairs Shortest Paths (w/o test cases)
 All pairs shortest paths problem can be considered as upgrade of the
 single source shortest path problem. Two well-known algorithms for
@@ -84,11 +85,12 @@ algorithm for sparse graph. For dense graph, I personally recommend
 Floyd-Warshall algorithm, because it is extremely easy to code, if
 the state function is being understood, just three loops.
 
+---
 ### Traveling Salesman Problem (TSP)
 
 Traveling Salesman Problem is slightly explored here. A DP solution
 with O ( n^2 * 2^n ) is developed just to taste the hardness of a
-NP-Complete problem. 
+NP-Complete problem.
 
-
+---
 ### More topics...
