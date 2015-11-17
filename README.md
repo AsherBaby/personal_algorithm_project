@@ -20,19 +20,22 @@ This algorithm can be used for recommendation system.
 ### Graph Connectivity
 #### Compute Connected Components in Undirected Graph
 In undirected graph, connected components can be easily computed
-through a BFS-loop or DFS-loop.
+through a BFS-loop or DFS-loop, or using a Union & Find data structure.
 
 And the running time is O( m+n )
 
 #### Compute Weak Connected Components in Directed Graph
 In directed graph, the weak connected components can be computed
-by leveraging union & find data structure. If there is an edge from
-cluster A to cluster B, union & find structure can combine A and B into
-one cluster in O( log(n) ) time.
+by leveraging union & find data structure.
 
-Since every node and every edge is visited once, and basic operation
-of union & find is O(log(n)), the total running time of this algorithm
-is O( (m+n) log(n) ).
+Union & Find data structure with path compression is coded in less than
+20 lines, with two APIs:
+
+1. union(a, b)
+2. find(a)  -> root_a
+
+Union & Find is a very compact but useful data structure for many
+applications.
 
 #### Compute Strong Connected Components in Directed Graph
 Computing strong connected components is slightly harder than the
@@ -54,10 +57,10 @@ for use.
 Hash Heap data structure has the following API with complete
 O( log(n) ) running time for each operation:
 
-1. add(node) -> None
+1. add(node)
 2. poll() -> min node
-3. update(node) -> None
-4. delete(node) -> None
+3. update(node)
+4. delete(node)
 
 With the help of hash heap, the Dijkstra algorithm has running time of
 O( m log(n) ).

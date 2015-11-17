@@ -1,3 +1,5 @@
+from union_find import UnionFind
+
 class DirectedGraphNode:
     def __init__(self, x):
         self.label = x
@@ -12,39 +14,19 @@ def weak_connected_components(nodes):
         for neighbor in node.neighbors:
             union_find.union(node.label, neighbor.label)
 
-    return union_find.transform_to_cluster()
+    return transform_to_cluster(union_find)
 
+def transform_to_cluster(union_find):
+    hash_cluster = {}
+    for node in union_find.father:
+        father = union_find.find(node)
+        if father not in hash_cluster:
+            hash_cluster[father] = [node]
+        else:
+            hash_cluster[father].append(node)
 
-class UnionFind:
+    list_cluster = []
+    for father, cluster in hash_cluster.items():
+        list_cluster.append(sorted(cluster))
 
-    def __init__(self, ids):
-        self.disjoint_set = {}
-        for id in ids:
-            self.disjoint_set[id] = id
-
-    def union(self, a, b):
-        # a => b
-        father_a = self.find(a)
-        father_b = self.find(b)
-        self.disjoint_set[father_a] = father_b
-
-    def find(self, a):
-        father = self.disjoint_set[a]
-        while father != self.disjoint_set[father]:
-            father = self.disjoint_set[father]
-        return father
-
-    def transform_to_cluster(self):
-        hash_cluster = {}
-        for node in self.disjoint_set:
-            father = self.find(node)
-            if father not in hash_cluster:
-                hash_cluster[father] = [node]
-            else:
-                hash_cluster[father].append(node)
-
-        list_cluster = []
-        for father, cluster in hash_cluster.items():
-            list_cluster.append(sorted(cluster))
-
-        return list_cluster
+    return list_cluster
