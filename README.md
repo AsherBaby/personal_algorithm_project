@@ -87,21 +87,37 @@ the state function is being understood, just three loops.
 
 ---
 ### Traveling Salesman Problem (TSP)
-
 Traveling Salesman Problem is slightly explored here. A DP solution
 with O ( n^2 * 2^n ) is developed just to taste the hardness of a
 NP-Complete problem.
 
 ---
 ### 2-SAT Problem
-
 Example of 2-SAT problem:
 
 Input: (x1 v x2) ^ (~x1 v x2) ^ (x3 v x4) ^ (~x2 v ~x4)
 
-Output: True if exists an assignment that simultaneously satisfies every clause, False otherwise.
+Output: True if exists an assignment that simultaneously satisfies
+every clause, False otherwise.
 
-Solution: reduction to computing Strongly Connected Components, and solved in linear time.
+Solution: reduction to computing Strongly Connected Components, and
+solved in linear time.
+
+---
+### Backtracking
+Backtracking is simply DFS with some strategy to stop searching
+deeper, so that without searching the whole tree, solutions could be
+found quicker than exhausted search.
+
+Backtracking is usually used when a solution could be found recursively.
+
+Some common problems solved by backtracking are:
+
+1. N Queen
+2. Word Search
+3. Palindrome Partitioning
+4. Number of Islands
+
 
 ---
 ### More topics...
