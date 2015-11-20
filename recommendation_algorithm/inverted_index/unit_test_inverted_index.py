@@ -15,9 +15,9 @@ class TestRecommenderWithInvertedIndex(unittest.TestCase):
         self.recommender.user_table[3] = [3, 1, 9, 4]
 
     def test_of_find_similar_user(self):
-        self.recommender.build_inverted_table()
-        self.assertEqual(
-            self.recommender.find_similar_user(1, 2), [3, 2])
+        self.recommender.preparer()
+        two_most_similar_users = self.recommender.find_similar_user(1, 2)
+        self.assertEqual(two_most_similar_users, [3, 2])
 
 if __name__ == '__main__':
     unittest.main()

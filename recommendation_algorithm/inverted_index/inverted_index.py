@@ -3,7 +3,8 @@ class Recommender:
 
     def __init__(self, n, m):
         self.user_table = [None] * (n+1)  # list or dict?
-        self.inverted_table = [None] * (m+1)
+        self.m = m
+        self.inverted_index = None
 
     def find_similar_user(self, u_id, k):
         """Find top k similar users to u_id
@@ -20,7 +21,7 @@ class Recommender:
         """
         similar_user = defaultdict(int)
         for m_id in self.user_table[u_id]:
-            for u_id2 in self.inverted_table[m_id]:
+            for u_id2 in self.inverted_index[m_id]:
                 if u_id2 != u_id:
                     similar_user[u_id2] += 1
         return sorted(
@@ -28,11 +29,12 @@ class Recommender:
             key=similar_user.get,
             reverse=True)[:k]
 
-    def build_inverted_table(self):
+    def preparer(self):
+        self.inverted_index = [None] * (self.m + 1)
         for u_id in range(len(self.user_table)):
             if self.user_table[u_id]:  # can be None
                 for m_id in self.user_table[u_id]:
-                    if not self.inverted_table[m_id]:
-                        self.inverted_table[m_id] = [u_id]
+                    if not self.inverted_index[m_id]:
+                        self.inverted_index[m_id] = [u_id]
                     else:
-                        self.inverted_table[m_id].append(u_id)
+                        self.inverted_index[m_id].append(u_id)
