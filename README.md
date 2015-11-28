@@ -124,6 +124,11 @@ Some common problems solved by backtracking are:
 3. Palindrome Partitioning
 4. Number of Islands
 
+---
+### Multithreading, Multiprocessing
+Condition variable and semaphore are explored here, a thread-safe
+consumer-producer class is implemented.
+
 
 ---
 ### More topics...
