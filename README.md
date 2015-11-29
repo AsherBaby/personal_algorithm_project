@@ -129,6 +129,14 @@ Some common problems solved by backtracking are:
 Condition variable and semaphore are explored here, a thread-safe
 consumer-producer class is implemented.
 
+---
+### Tiny URL
+Primary key + Map + [0-9a-zA-Z]
+
+Use primary key as tiny url (address).
+Map (Dictionary) stores mapping between long url and short url, and quickly
+find already exists long url.
+[0-9a-zA-Z] uses 62 symbols to make tiny url shorter.
 
 ---
 ### More topics...
