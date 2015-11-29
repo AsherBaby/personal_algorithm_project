@@ -16,18 +16,16 @@ class TaskList:
     def add_task(self, a):
         semaphore = self.semaphore
         lock = self.lock
-        lock.acquire()
-        self.n += a
-        self.dummy_list.append(self.n)
-        for i in range(a):
-            semaphore.release()
-        lock.release()
+        with lock:
+            self.n += a
+            self.dummy_list.append(self.n)
+            for i in range(a):
+                semaphore.release()
 
     def get_task(self):
         semaphore = self.semaphore
         lock = self.lock
         semaphore.acquire()
-        lock.acquire()
-        self.n -= 1
-        self.dummy_list.append(self.n)
-        lock.release()
+        with lock:
+            self.n -= 1
+            self.dummy_list.append(self.n)

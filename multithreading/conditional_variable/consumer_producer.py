@@ -13,19 +13,15 @@ class TaskList:
 
     def add_task(self, a):
         cv = self.cv
-        cv.acquire()
         with cv:
             self.n += a
             cv.notify(n=a)
             self.dummy_list.append(self.n)
-        cv.release()
 
     def get_task(self):
         cv = self.cv
-        cv.acquire()
         with cv:
             while not self.has_task():
                 cv.wait()
             self.n -= 1
             self.dummy_list.append(self.n)
-        cv.release()
