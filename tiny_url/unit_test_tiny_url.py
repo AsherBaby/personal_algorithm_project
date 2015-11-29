@@ -12,6 +12,8 @@ class TestTinyURL(unittest.TestCase):
         tiny_url = TinyURL()
         self.assertEqual(
             tiny_url.lookup(tiny_url.generate('bbb')), 'bbb')
+        self.assertEqual(
+            tiny_url.lookup('ccc'), None)
 
 if __name__ == '__main__':
     unittest.main()
