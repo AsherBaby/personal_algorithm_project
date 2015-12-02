@@ -2,7 +2,8 @@
 
 ---
 ### Recommendation related Algorithms
-#### Inversion Count of Two Arrays
+Inversion Count of Two Arrays
+
 Inversion count of two arrays implemented with Divide and Conquer
 algorithm, with O(n log(n)) time complexity.
 
@@ -16,7 +17,8 @@ The smaller #inv, the more similar of the two arrays.
 
 This algorithm can be used for recommendation system.
 
-#### Inverted Index
+Inverted Index
+
 For a content-based recommendation algorithm, suppose there are m
 movies, n users. The basic algorithm takes O( n(m^2) ) running time
 to find the most similar user for one user. Using inverted index,
@@ -24,13 +26,15 @@ the running time can be optimized to O ( nm ).
 
 ---
 ### Graph Connectivity
-#### Compute Connected Components in Undirected Graph
+Compute Connected Components in Undirected Graph
+
 In undirected graph, connected components can be easily computed
 through a BFS-loop or DFS-loop, or using a Union & Find data structure.
 
 And the running time is O( m+n )
 
-#### Compute Weak Connected Components in Directed Graph
+Compute Weak Connected Components in Directed Graph
+
 In directed graph, the weak connected components can be computed
 by leveraging union & find data structure.
 
@@ -43,7 +47,8 @@ Union & Find data structure with path compression is coded in less than
 Union & Find is a very compact but useful data structure for many
 applications.
 
-#### Compute Strong Connected Components in Directed Graph
+Compute Strong Connected Components in Directed Graph
+
 Computing strong connected components is slightly harder than the
 above problems.
 [Kosaraju Two-Pass Algorithm](https://en.wikipedia.org/wiki/Kosaraju%27s_algorithm)
@@ -137,6 +142,17 @@ Use primary key as tiny url (address).
 Map (Dictionary) stores mapping between long url and short url, and quickly
 find already exists long url.
 [0-9a-zA-Z] uses 62 symbols to make tiny url shorter.
+
+
+---
+### Rate Limiter
+Three different rate limiter algorithms are implemented:
+
+1. Gap
+2. Bucket
+3. Queue
+
+And each pros and cons are analyzed.
 
 ---
 ### More topics...
