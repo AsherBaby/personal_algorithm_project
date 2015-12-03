@@ -1,5 +1,7 @@
 ## Pei Zhao's personal algorithm projects
 
+This project contains Recommendation Algorithms, Graph Connectivity, Dijkstra with Hash Heap, All Pairs Shortest Paths, TSP, 2-SAT, Backtracking, Multithreading/Multiprocessing, Tiny URL, Rate Limiter, Bloomfilter.
+
 ---
 ### Recommendation related Algorithms
 Inversion Count of Two Arrays
