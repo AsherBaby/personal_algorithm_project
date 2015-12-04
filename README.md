@@ -1,6 +1,9 @@
 ## Pei Zhao's personal algorithm projects
 
-This project contains Recommendation Algorithms, Graph Connectivity, Dijkstra with Hash Heap, All Pairs Shortest Paths, TSP, 2-SAT, Backtracking, Multithreading/Multiprocessing, Tiny URL, Rate Limiter, Bloomfilter.
+This project contains Recommendation Algorithms, Graph Connectivity,
+Dijkstra with Hash Heap, All Pairs Shortest Paths, TSP, 2-SAT,
+Backtracking, Multithreading/Multiprocessing, Tiny URL, Rate Limiter,
+Bloomfilter, and MapReduce.
 
 ---
 ### Recommendation related Algorithms
@@ -141,8 +144,8 @@ consumer-producer class is implemented.
 Primary key + Map + [0-9a-zA-Z]
 
 Use primary key as tiny url (address).
-Map (Dictionary) stores mapping between long url and short url, and quickly
-find already exists long url.
+Map (Dictionary) stores mapping between long url and short url, and
+quickly find already exists long url.
 [0-9a-zA-Z] uses 62 symbols to make tiny url shorter.
 
 
@@ -167,6 +170,12 @@ API:
 2. lookup()
 
 Bloomfilter has relative small false positive depends on how full it is.
+
+
+---
+### MapReduce
+Problems of word count, inverted index, anagrams, top ten are solved
+using MapReduce
 
 ---
 ### More topics...
