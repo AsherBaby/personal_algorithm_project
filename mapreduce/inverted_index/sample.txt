@@ -1,4 +1,3 @@
-0 Jay eats food
-3 food & music
-7 Jay attended party
-
+0 Google does not only do search engine
+1 Apple is not only famous for iPhone
+2 Tesla is the first successful electrical car company

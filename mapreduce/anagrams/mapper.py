@@ -3,7 +3,6 @@
 import sys
 
 for line in sys.stdin:
-    val = line.rstrip()
+    val = line.strip()
     key = ''.join(sorted(val))
     print('{0}\t{1}'.format(key, val))
-

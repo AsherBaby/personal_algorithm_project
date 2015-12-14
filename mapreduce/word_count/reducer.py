@@ -1,21 +1,20 @@
 #!/usr/bin/env python
-
 import sys
 
 def main():
-    i = sys.stdin.readline().rstrip().split()
+    last_word = sys.stdin.readline().rstrip().split()
     if not i:
         return
-    i = i[0]
+    last_word= last_word[0]
     count = 1
     for line in sys.stdin:
-        j = line.rstrip().split()[0]
-        if j == i:
+        word = line.rstrip().split()[0]
+        if word == last_word:
             count += 1
         else:
-            print('{0} {1}'.format(i, count))
-            i = j
+            print('{}\t{}'.format(i, count))
+            last_word= j
             count = 1
-    print('{0} {1}'.format(i, count))
+    print('{}\t{}'.format(last_word, count))
 
 main()

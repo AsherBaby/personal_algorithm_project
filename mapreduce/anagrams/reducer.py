@@ -6,18 +6,16 @@ def main():
     i = sys.stdin.readline().rstrip().split()
     if not i:
         return
+    last_anagram = i[0]
     group = [i[1]]
-    for j in sys.stdin:
-        j = j.rstrip().split()
-        if j[0] == i[0]:
-            group.append(j[1])
+    for line in sys.stdin:
+        [anagram, word] = line.rstrip().split()
+        if anagram == last_anagram:
+            group.append(word)
         else:
-            if len(group) > 1:
-                print(group)
-            i = j
-            group = [i[1]]
-    if len(group) > 1:
-        print(group)
+            print('\t'.join(group))
+            last_anagram = anagram
+            group = [word]
+    print('\t'.join(group))
 
 main()
-

@@ -1,20 +1,20 @@
 #!/usr/bin/env python
-
 import sys
 
 def main():
-    i = sys.stdin.readline().rstrip().split()
-    if not i:
+    last = sys.stdin.readline().strip()
+    if not last:
         return
-    doc_list = [i[1]]
-    for j in sys.stdin:
-        j = j.rstrip().split()
-        if j[0] == i[0]:
-            doc_list.append(j[1])
+    [last_word, dID] = last.split()
+    d_list = set(dID)
+    for line in sys.stdin:
+        [word, dID] = line.strip().split()
+        if word == last_word:
+            d_list.add(dID)
         else:
-            print('{0} {1}'.format(i[0], doc_list))
-            i = j
-            doc_list = [i[1]]
-    print('{0} {1}'.format(i[0], doc_list))
+            print('{}\t{}'.format(last_word, '\t'.join(d_list)))
+            last_word = word
+            d_list = set(dID)
+    print('{}\t{}'.format(last_word, '\t'.join(d_list)))
 
 main()
