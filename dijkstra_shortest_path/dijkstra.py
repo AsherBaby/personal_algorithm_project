@@ -1,5 +1,5 @@
 """Dijkstra's shortest path algorithm"""
-from hash_heap import HashHeap
+from hash_priority_queue import HashPriorityQueue
 
 class DirectedGraphNode:
 
@@ -47,19 +47,19 @@ def dijkstra(source, graph):
     This method computes shortest distance and path for each node
     from the source node, and save results in each node's distance
     attribute.
-    Return None
+    return None
     """
     reachable = dfs(source, graph)
     for id in reachable:
         graph[id].dist = float('inf')
     source.dist = 0
-    unknown = HashHeap(key=lambda node: node.dist)
+    unknown = HashPriorityQueue(key=lambda x, y: x.dist < y.dist)
     for node_id in reachable:
         unknown.add(graph[node_id])  # add to unknown
     visited = set()
 
     while len(unknown):
-        node = unknown.poll()
+        node = unknown.pop()
         visited.add(node.id)  # add to known
         for edge in node.edges:
             neighbor = graph[edge.dest]

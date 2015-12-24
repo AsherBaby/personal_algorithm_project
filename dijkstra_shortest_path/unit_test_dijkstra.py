@@ -2,7 +2,7 @@ import unittest
 from dijkstra import (
     dijkstra, DirectedGraphNode, DirectedGraphEdge, Graph)
 
-class TestHashHeap(unittest.TestCase):
+class TestDijkstra(unittest.TestCase):
 
     def test_of_dijkstra_small_dataset(self):
         graph = Graph()
@@ -35,4 +35,4 @@ class TestHashHeap(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main(verbosity=2)
+    unittest.main()
