@@ -1,10 +1,10 @@
 import unittest
-from hash_priority_queue import HashPriorityQueue
+from hash_heap import HashHeap
 
-class TestHashPriorityQueue(unittest.TestCase):
+class TestHashHeap(unittest.TestCase):
 
     def setUp(self):
-        self.pq = HashPriorityQueue()
+        self.pq = HashHeap()
         array = [8, 5, 3, 9, 6, 4, 2, 6]
         for n in array:
             self.pq.add(n)

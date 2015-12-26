@@ -1,4 +1,4 @@
-class PriorityQueue:
+class Heap:
 
     def __init__(self, key=lambda x, y: x < y):
         self.heap = []

@@ -1,11 +1,11 @@
 import unittest
-from priority_queue import PriorityQueue
+from heap import Heap
 
-class TestPriorityQueue(unittest.TestCase):
+class TestHeap(unittest.TestCase):
 
     def test_of_heap_sort(self):
         array = [8, 5, 3, 9, 6, 4, 2, 6]
-        pq = PriorityQueue()
+        pq = Heap()
         for n in array:
             pq.add(n)
         sorted_array = []

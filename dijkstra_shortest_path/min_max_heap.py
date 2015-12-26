@@ -1,13 +1,13 @@
 """
 Min max priority queue, get min and max in O(1)
 """
-from hash_priority_queue import HashPriorityQueue
+from hash_heap import HashHeap
 
-class MinMaxPriorityQueue:
+class MinMaxHeap:
 
     def __init__(self):
-        self.min_pq = HashPriorityQueue()
-        self.max_pq = HashPriorityQueue(key=lambda x, y: x > y)
+        self.min_pq = HashHeap()
+        self.max_pq = HashHeap(key=lambda x, y: x > y)
 
     def __len__(self):
         return len(self.min_pq)

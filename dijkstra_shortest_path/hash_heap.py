@@ -13,9 +13,9 @@ Ideas during implementation
     2. It is better to keep track of duplicates in hash, since in heap
     we only store objects.
 """
-from priority_queue import PriorityQueue
+from heap import Heap
 
-class HashPriorityQueue(PriorityQueue):
+class HashHeap(Heap):
 
     class Node:
         """
@@ -51,7 +51,7 @@ class HashPriorityQueue(PriorityQueue):
             self.hash[key].num += 1
         else:
             self.hash[key] = self.Node(len(self.heap))
-            PriorityQueue.add(self, key)
+            Heap.add(self, key)
 
     def pop(self):
         heap = self.heap

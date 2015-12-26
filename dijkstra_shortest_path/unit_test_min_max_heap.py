@@ -1,10 +1,10 @@
 import unittest
-from min_max_priority_queue import MinMaxPriorityQueue
+from min_max_heap import MinMaxHeap
 
-class TestMinMaxPriorityQueue(unittest.TestCase):
+class TestMinMaxHeap(unittest.TestCase):
 
     def setUp(self):
-        self.pq = MinMaxPriorityQueue()
+        self.pq = MinMaxHeap()
         array = [8, 5, 3, 9, 6, 4, 2, 6]
         for n in array:
             self.pq.add(n)
