@@ -4,7 +4,7 @@ from graph import Graph
 # import ipdb; ipdb.set_trace()
 
 
-def dijkstra(source, graph):
+def dijkstra(graph, source):
     """Dijkstra
 
     This method computes shortest distance and path for each node
@@ -12,7 +12,7 @@ def dijkstra(source, graph):
     attribute.
     return None
     """
-    reachable = preprocessing(source, graph)
+    reachable = preprocessing(graph, source)
     for id in reachable:
         graph[id].dijkstra_dist = float('inf')
     source.dijkstra_dist = 0
@@ -31,21 +31,17 @@ def dijkstra(source, graph):
                 adj.dijkstra_dist = node.dijkstra_dist + edge.dist
                 unknown.update(adj)  # method only in hash heap
 
-def preprocessing(source, graph):
+def preprocessing(graph, source):
     """
     Return reachable nodes id as a list
     """
-    visited = set()
-    if source.id not in visited:
-        visited.add(source.id)
-        dfs(source, graph, visited)
-    return visited
+    marked = [False] * graph.n
+    dfs(graph, source, marked)
+    return [i for i, item in enumerate(marked) if item]
 
-def dfs(node, graph, visited):
+def dfs(graph, node, marked):
+    marked[node.id] = True
     for edge in node.edges:
-        if edge.dest not in visited:
-            visited.add(edge.dest)
-            dfs(graph[edge.dest], graph, visited)
-
-# graph = Graph('tinyG.txt')
-# dijkstra(graph[1], graph)
+        adj = graph[edge.dest]
+        if not marked[adj.id]:
+            dfs(graph, adj, marked)

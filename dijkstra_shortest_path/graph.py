@@ -23,6 +23,7 @@ class Graph:
         self.adj = [None] * n
         if filename:
             self._read_from_file(filename)
+        self.n = len(self.adj)
 
     def __getitem__(self, id):
         # get a node
