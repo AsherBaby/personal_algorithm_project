@@ -7,7 +7,6 @@ class Node:
     def __init__(self, id):
         self.id = id
         self.edges = []
-        self.dijkstra_dist = float('inf')
 
 class Edge:
 
@@ -23,7 +22,10 @@ class Graph:
         self.adj = [None] * n
         if filename:
             self._read_from_file(filename)
-        self.n = len(self.adj)
+
+    def __len__(self):
+        """ The size of graph is the number of vertices it has """
+        return len(self.adj)
 
     def __getitem__(self, id):
         # get a node
