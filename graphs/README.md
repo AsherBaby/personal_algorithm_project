@@ -88,4 +88,9 @@ Some common problems solved by backtracking are:
 
 
 ---
+### Graph adjacency list representation
+- Normal Graph (index based)
+- Symbol Graph (hashed)
+
+---
 ### More topics...
