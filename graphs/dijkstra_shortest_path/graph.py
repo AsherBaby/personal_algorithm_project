@@ -10,9 +10,9 @@ class Node:
 
 class Edge:
 
-    def __init__(self, src, dest, dist):
-        self.src = src
-        self.dest = dest
+    def __init__(self, tail, head, dist):
+        self.tail = tail
+        self.head = head
         self.dist = dist
 
 class Graph:
@@ -43,6 +43,12 @@ class Graph:
             print()
 
     def _read_from_file(self, filename):
+        """
+        File format:
+        1. # of nodes
+        2. node_id adj_id1,distance adj_id2,distance
+        3. ......
+        """
         with open(filename) as fh:
             n = int(fh.readline().strip())
             self.adj = [None] * n  # a n nodes list

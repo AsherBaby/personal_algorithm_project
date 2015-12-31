@@ -48,7 +48,7 @@ class ShortestDist:
             node = unknown.pop()
             marked[node.id] = True
             for edge in node.edges:
-                adj = graph[edge.dest]
+                adj = graph[edge.head]
                 if (not marked[adj.id] and
                     self.dists[node.id] + edge.dist < self.dists[adj.id]):
                     self.dists[adj.id] = self.dists[node.id] + edge.dist
@@ -66,6 +66,6 @@ class ShortestDist:
     def dfs(self, graph, node, marked):
         marked[node.id] = True
         for edge in node.edges:
-            adj = graph[edge.dest]
+            adj = graph[edge.head]
             if not marked[adj.id]:
                 self.dfs(graph, adj, marked)
