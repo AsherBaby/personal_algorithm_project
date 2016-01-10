@@ -7,6 +7,9 @@ mapreduce, and sd (System Design).
 ---
 ### sorting
 
+- key indexed counting
+- radix sort
+
 ---
 ### searching
 
@@ -22,12 +25,11 @@ mapreduce, and sd (System Design).
 - All pairs shortest paths
 
 ---
-###
-
-strings
+### strings
 
 - recommendation algorithms
-
+- KMP
+- flip bits
 
 ---
 ### np
