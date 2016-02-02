@@ -1,8 +1,7 @@
 ## Pei Zhao's personal algorithm project
 
 My personal algorithm project covers multiple topics, including sorting,
-searching, graphs, strings, np_problem (NP problem), operating_systen
-(Operating System),mapreduce, and system design (System Design).
+searching, graphs, strings, np_complete (NPC problem), operating_systen ,mapreduce, and system_design.
 
 ---
 ### sorting
@@ -32,7 +31,7 @@ searching, graphs, strings, np_problem (NP problem), operating_systen
 - flip bits
 
 ---
-### np problem
+### npc
 
 - 2 SAT
 - TSP
