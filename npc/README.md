@@ -1,22 +1,61 @@
 
 ---
 ### Traveling Salesman Problem (TSP)
-Traveling Salesman Problem is slightly explored here. A DP solution
-with O ( n^2 * 2^n ) is developed just to taste the hardness of a
-NP-Complete problem.
+Find the shortest Hamiltonian path.
+
+Traveling Salesman Problem is slightly explored here. A DP solution with O ( n^2 * 2^n ) is developed just to taste the hardness of a NP-Complete problem.
 
 ---
-### 2-SAT Problem
-Example of 2-SAT problem:
+### Bin Packing
+You have n items and m bins, each item i weighs w[i]. Each bin can at most hold W weights. Is there a solution?
 
-Input: (x1 v x2) ^ (~x1 v x2) ^ (x3 v x4) ^ (~x2 v ~x4)
+---
+### Knapsack
+You have n items and each item values v[i] and weighs w[i]. Find a
+subset of n items that have total weight less or equal than W and have value greater or equal than V.
 
-Output: True if exists an assignment that simultaneously satisfies
-every clause, False otherwise.
+---
+### Subset Sum
+Given a set of integers, does there exist a subset with sum exactly equal to B?
 
-Solution: reduction to computing Strongly Connected Components, and
-solved in linear time.
+Note: 2-sum is a O(n) problem
 
+---
+### Partition (Load balancing)
+Give a set of integers, can you partition them into two groups, making sum of each group equivalent?
+
+---
+### Integer linear programming
+Integer linear programming is in NP-Complete, nevertheless, linear programming is in P.
+
+---
+### SAT
+The first known NP-Complete problem.
+
+---
+### Clique
+Given a graph G(V, E). Does there exist of set of k vertices so that each vertex is adjacent to all the other.
+
+Note: this requires adjacency not only connectivity.
+
+---
+### Longest path
+Contract to shortest path, but is NPC.
+
+---
+### Machine scheduling
+With precedence constrains
+
+---
+### Shortest Common Superstring
+Given genetic alphabet and n segments, does there exist a segment of length k that is superstring of each of these n segments?
+
+---
+### Nash equilibrium
+Find a Nash equilibrium.
+
+---
+###  
 
 ---
 ### More topics...
