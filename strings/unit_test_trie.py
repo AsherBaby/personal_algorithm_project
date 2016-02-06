@@ -1,7 +1,13 @@
+"""
+To run unittest from command line interface:
+    cd (this directory)
+    python3 -m unittest unit_test_trie
+"""
+
 import unittest
 from trie import Trie
 
-class Test(unittest.TestCase):
+class TrieTestCase(unittest.TestCase):
 
     def setUp(self):
         self.t = Trie(26)
@@ -26,6 +32,3 @@ class Test(unittest.TestCase):
             t.keys_with_prefix('sh'),
             ['she', 'shells', 'shore'])
         self.assertEqual(t.num_keys_with_prefix('sh'), 3)
-
-if __name__ == '__main__':
-    unittest.main(verbosity=2)
