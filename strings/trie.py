@@ -1,5 +1,8 @@
 """
-A trie implementation that mightly supports prefix searching.
+A trie implementation that powerfully supports prefix searching.
+
+Trie or R-trie is sweet for small strings and small alphabet.
+The performance of trie is hard to beat if you can afford the space :)
 """
 
 class Trie:
