@@ -12,7 +12,6 @@ class HashHeap:
         self.type = type
 
     def __bool__(self):
-        # test if hash heap is empty
         return bool(self.heap)
 
     def cmp(self, idx1, idx2):
