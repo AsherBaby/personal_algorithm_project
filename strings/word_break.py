@@ -1,5 +1,5 @@
 ans = []
-dict = {'i', 'am', 'happy', 'this', 'afternoon', 'after', 'noon'}
+dict = {'javascript', 'java', 'script'}
 
 def word_break(s):
     get_word(s, [])
@@ -27,3 +27,7 @@ def word_break2(s):
                 can_break[i] = True
                 break
     return can_break[n]
+
+word_break('javascript')
+print(ans)
+print(word_break2('javascript'))
