@@ -5,14 +5,14 @@ class TestHeap(unittest.TestCase):
 
     def test_of_heapify(self):
         array = [8, 5, 3, 9, 6, 4, 2, 6]
-        pq = Heap()
+        pq = Heap('min')
         pq.heapify(array)
         self.assertEqual(
             array, [2, 5, 3, 6, 6, 4, 8, 9])
 
     def test_of_heap_sort(self):
         array = [8, 5, 3, 9, 6, 4, 2, 6]
-        pq = Heap()
+        pq = Heap('min')
         for n in array:
             pq.add(n)
         sorted_array = []

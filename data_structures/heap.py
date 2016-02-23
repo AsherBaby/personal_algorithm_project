@@ -8,16 +8,22 @@ Heap:
   private:
     _swim()
     _sink()
+    _comp()
+    _swap()
 """
 
 class Heap:
 
-    def __init__(self, key=lambda x, y: x < y):
+    def __init__(self, type):
         self.heap = []
-        self.comp = key
+        self.type = type
 
     def __len__(self):
         return len(self.heap)
+
+    def _comp(self, k1, k2):
+        h = self.heap
+        return h[k1] < h[k2] if self.type=='min' else h[k1] > h[k2]
 
     def _swap(self, i, j):
         self.heap[i], self.heap[j] = self.heap[j], self.heap[i]
@@ -49,7 +55,7 @@ class Heap:
 
     def _swim(self, k):
         p = lambda x: (x-1)//2
-        while p(k) >= 0 and self.comp(self.heap[k], self.heap[p(k)]):
+        while p(k) >= 0 and self._comp(k, p(k)):
             self._swap(k, p(k))
             k = p(k)
 
@@ -59,8 +65,8 @@ class Heap:
         rc = lambda x: x*2+2
         while lc(k) < len(heap):
             c = lc(k) if (rc(k) >= len(heap) or
-                self.comp(heap[lc(k)], heap[rc(k)])) else rc(k)
-            if self.comp(heap[c], heap[k]):
+                self._comp(lc(k), rc(k))) else rc(k)
+            if self._comp(c, k):
                 self._swap(c, k)
                 k = c
             else:
