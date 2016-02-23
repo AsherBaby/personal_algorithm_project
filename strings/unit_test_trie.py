@@ -24,11 +24,10 @@ class TrieTestCase(unittest.TestCase):
         t = self.t
         self.assertEqual(t.get('shells'), 3)
         self.assertEqual(t.get('she'), 0)
-        self.assertEqual(t.get('him'), None)
+        self.assertIsNone(t.get('him'))
 
     def test_of_keys_with_prefix(self):
         t = self.t
         self.assertEqual(
             t.keys_with_prefix('sh'),
             ['she', 'shells', 'shore'])
-        self.assertEqual(t.num_keys_with_prefix('sh'), 3)
