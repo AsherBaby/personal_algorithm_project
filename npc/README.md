@@ -21,8 +21,8 @@ Given a set of integers, does there exist a subset with sum exactly equal to B?
 Note: 2-sum is a O(n) problem
 
 ---
-### Partition (Load balancing)
-Give a set of integers, can you partition them into two groups, making sum of each group equivalent?
+### Machine scheduling
+M machines and N jobs. Can you schedule them to finish them in time?
 
 ---
 ### Integer linear programming
@@ -42,9 +42,6 @@ Note: this requires adjacency not only connectivity.
 ### Longest path
 Contract to shortest path, but is NPC.
 
----
-### Machine scheduling
-With precedence constrains
 
 ---
 ### Shortest Common Superstring
