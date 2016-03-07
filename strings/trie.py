@@ -14,7 +14,6 @@ class Trie:
     def __init__(self, R):
         self.root = self.Node(R)
         self.R = R
-        self.keys = []
 
     def get(self, key):
         node = self.root
@@ -38,7 +37,7 @@ class Trie:
             node = node.next[ord(c)-ord('a')]
             if not node:
                 return
-        self.keys.clear()
+        self.keys = []
         self.dfs(node, prefix)
         return self.keys
 
