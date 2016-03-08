@@ -1,6 +1,6 @@
 ## Pei Zhao's personal projects of algorithms
 
-This repository covers implementations of more than 100 fundamental algorithms. Mostly include unit tests and analyses as well.
+This repository covers implementations of more than 100 fundamental algorithms. Most of them include unit tests and analyses as well.
 
 ### Data Structures
 * BST
