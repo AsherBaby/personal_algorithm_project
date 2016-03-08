@@ -6,6 +6,7 @@ sequence class and the compute-when-need array.
 """
 from bisect import bisect_left
 import collections
+from pprint import pprint as print
 
 A = [int(x) for x in input().strip().split()]
 
@@ -16,7 +17,7 @@ class FinalEnergyList(collections.Sequence):
         self.n = n
 
     def __len__(self):
-        return n
+        return self.n
 
     def __getitem__(self, x):
         if not (0 <= x < self.n):
@@ -29,3 +30,4 @@ def f(x):
     return x
 
 ans = bisect_left(FinalEnergyList(f, pow(10, 5)), 0)
+print(ans)
