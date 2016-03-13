@@ -14,12 +14,12 @@ class Sudoku:
         if self.grid[i][j]:
             if self.valid(i, j) and self.dfs(*self.next(i, j)):
                 return True
-            return False
-        for x in range(1, 10):
-            self.grid[i][j] = x  # try
-            if self.valid(i, j) and self.dfs(*self.next(i, j)):
-                return True
-        self.grid[i][j] = 0  # reset
+        else:
+            for x in range(1, 10):
+                self.grid[i][j] = x  # try
+                if self.valid(i, j) and self.dfs(*self.next(i, j)):
+                    return True
+            self.grid[i][j] = 0  # reset
         return False
 
     def valid(self, i, j):
