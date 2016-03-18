@@ -7,5 +7,9 @@ class TestCombinationSum(unittest.TestCase):
         self.assertEqual(
             BreakDollars([1,2,5],10).solve(), 10)
 
+    def test_of_break_one_hundard_dollars(self):
+        self.assertEqual(
+            BreakDollars([1,2,5,10,20,100],100).solve(), 4112)
+
 if __name__ == '__main__':
     unittest.main()

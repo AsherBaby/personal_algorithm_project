@@ -13,15 +13,12 @@ class BreakDollars:
         self.ans = 0
 
     def solve(self):
-
         dp = [[0] * (self.t+1) for _ in range(self.n+1)]
         dp[0][0] = 1
         for i in range(1, self.n+1):
             for j in range(self.t+1):
                 dp[i][j] += dp[i-1][j]
                 k = j - self.A[i-1]
-                while k >= 0:
-                    dp[i][j] += dp[i-1][k]
-                    k -= self.A[i-1]
-
+                if k >= 0:
+                    dp[i][j] += dp[i][k]
         return dp[self.n][self.t]
