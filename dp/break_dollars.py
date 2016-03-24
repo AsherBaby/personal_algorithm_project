@@ -4,6 +4,7 @@ combinations of elements in A (allow use unlimited times) that sum
 to t.
 """
 
+
 class BreakDollars:
 
     def __init__(self, A, t):
