@@ -13,7 +13,7 @@ class LinkedHashMap:
         def __init__(self, key, value):
             self.left = None
             self.right = None
-            self.key = key
+            self.key = key  # needed
             self.value = value
 
     def __init__(self, cap=math.inf):
@@ -23,6 +23,15 @@ class LinkedHashMap:
         self.dummy_tail.left = self.dummy_head
         self.ht = {}
         self.cap = cap
+
+    def __contains__(self, key):
+        return key in self.ht
+
+    def __getitem__(self, key):
+        return self.ht[key]
+
+    def __setitem__(self, key, value):
+        self.ht[key] = value
 
     def full(self):
         return len(self.ht) >= self.cap

@@ -10,30 +10,25 @@ class LRUCache:
         self.cache = LinkedHashMap(cap)
 
     def get(self, key):
-        if key not in self.cache.ht:
+        ans = self.cache.get(key)  # get()
+        if ans is None:
             return
         self._move_to_head(key)
-        return self.cache.ht[key].value
+        return ans
 
     def set(self, key, value):
-        if key in self.cache.ht:
-            self.cache.ht[key].value = value
+        if key in self.cache:
+            self.cache[key].value = value
             self._move_to_head(key)
         else:
-            if not self.cache.full():
-                self.cache.insert(key, value)
-            else:
-                del self.cache.ht[self.cache.dummy_tail.left.key]
-                self.cache.ht[key] = self.cache.dummy_tail.left
-                self.cache.ht[key].key = key
-                self.cache.ht[key].value = value
-                self._move_to_head(key)
+            if self.cache.full():  # full()
+                self._remove_last()
+            self.cache.insert(key, value)  # insert()
 
     def _move_to_head(self, key):
-        node = self.cache.ht[key]
-        node.left.right = node.right
-        node.right.left = node.left
-        node.right = self.cache.dummy_head.right
-        node.left = self.cache.dummy_head
-        self.cache.dummy_head.right = node
-        node.right.left = node
+        value = self.cache[key].value
+        self.cache.remove(key)  # remove()
+        self.cache.insert(key, value)  # insert()
+
+    def _remove_last(self):
+        self.cache.remove(self.cache.dummy_tail.left.key)  # remove()
