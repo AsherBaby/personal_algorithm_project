@@ -1,66 +1,39 @@
 """
 LRU: least recently used cache algorithm
-
-Implementation:
-    Dummy + Double linked list + Hash
 """
+from linked_hash_map import LinkedHashMap
+
 
 class LRUCache:
 
-    class Node:
-        def __init__(self, key, value):
-            self.key = key
-            self.value = value
-            self.prev = None
-            self.next = None
-
-    def __init__(self, n):
-        self.capacity = n
-        self.dummy = LRUCache.Node(0, 0)
-        self.tail = self.dummy
-        self.hash = dict()
+    def __init__(self, cap):
+        self.cache = LinkedHashMap(cap)
 
     def get(self, key):
-        if key not in self.hash:
+        if key not in self.cache.ht:
             return
-        node = self.hash[key]
-        if node != self.tail:
-            self.pop(node)
-            self.append(node)
-        return node.value
+        self._move_to_head(key)
+        return self.cache.ht[key].value
 
     def set(self, key, value):
-        if key in self.hash:
-            node = self.hash[key]
-            if node != self.tail:
-                self.pop(node)
-                self.append(node)
-            node.value = value
+        if key in self.cache.ht:
+            self.cache.ht[key].value = value
+            self._move_to_head(key)
         else:
-            if len(self.hash) < self.capacity:
-                node = LRUCache.Node(key, value)
-                self.hash[key] = node
-                self.append(node)
+            if not self.cache.full():
+                self.cache.insert(key, value)
             else:
-                self.modify(self.dummy.next.key, key, value)
-                node = self.hash[key]
-                if node != self.tail:
-                    self.pop(node)
-                    self.append(node)
+                del self.cache.ht[self.cache.dummy_tail.left.key]
+                self.cache.ht[key] = self.cache.dummy_tail.left
+                self.cache.ht[key].key = key
+                self.cache.ht[key].value = value
+                self._move_to_head(key)
 
-    def pop(self, node):
-        node.prev.next = node.next
-        node.next.prev = node.prev
-
-    def append(self, node):
-        node.prev = self.tail
-        self.tail.next = node
-        self.tail = node
-        node.next = None
-
-    def modify(self, old_key, key, value):
-        node = self.hash[old_key]
-        del self.hash[old_key]
-        self.hash[key] = node
-        node.key = key
-        node.value = value
+    def _move_to_head(self, key):
+        node = self.cache.ht[key]
+        node.left.right = node.right
+        node.right.left = node.left
+        node.right = self.cache.dummy_head.right
+        node.left = self.cache.dummy_head
+        self.cache.dummy_head.right = node
+        node.right.left = node

@@ -10,24 +10,31 @@ class LinkedHashMap:
 
     class ListNode:
 
-        def __init__(self, value):
-            self.prev = None
-            self.next = None
+        def __init__(self, key, value):
+            self.left = None
+            self.right = None
+            self.key = key
             self.value = value
 
     def __init__(self, cap=math.inf):
-        self.dummy = self.ListNode(0)
-        self.tail = self.dummy
+        self.dummy_head = self.ListNode(0, 0)
+        self.dummy_tail = self.ListNode(0, 0)
+        self.dummy_head.right = self.dummy_tail
+        self.dummy_tail.left = self.dummy_head
         self.ht = {}
-        self.size = 0
         self.cap = cap
 
+    def full(self):
+        return len(self.ht) >= self.cap
+
     def insert(self, key, value):
-        node = self.ListNode(value)
+        # insert at beginning
+        node = self.ListNode(key, value)
         self.ht[key] = node
-        self.tail.next = node
-        node.prev = self.tail
-        self.tail = node
+        node.left = self.dummy_head
+        node.right = self.dummy_head.right
+        self.dummy_head.right = node
+        node.right.left = node
 
     def get(self, key):
         if key not in self.ht:
@@ -36,6 +43,6 @@ class LinkedHashMap:
 
     def remove(self, key):
         node = self.ht[key]
-        node.prev.next = node.next
-        node.next.prev = node.prev
+        node.left.right = node.right
+        node.right.left = node.left
         del self.ht[key]
