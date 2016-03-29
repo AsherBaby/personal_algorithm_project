@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cassert>
 #include "CCI5-1.h"
+#include "CCI5-2.h"
 
 using namespace std;
 
@@ -26,5 +27,6 @@ int updateBit(int num, int i, int value) {
 
 int main(int argc, const char * argv[]) {
     test_of_CCI5_1();
+    test_of_CCI5_2();
     return 0;
 }
