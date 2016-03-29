@@ -25,6 +25,7 @@
 /* Begin PBXFileReference section */
 		D013CFDA1CAA002100308460 /* bit_manipulation */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = bit_manipulation; sourceTree = BUILT_PRODUCTS_DIR; };
 		D013CFDD1CAA002100308460 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D013CFE41CAA0A9900308460 /* CCI5-1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CCI5-1.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				D013CFDD1CAA002100308460 /* main.cpp */,
+				D013CFE41CAA0A9900308460 /* CCI5-1.h */,
 			);
 			path = bit_manipulation;
 			sourceTree = "<group>";
