@@ -1,6 +1,9 @@
 """
 Sudoku solver
 """
+from pprint import pprint
+
+
 class Sudoku:
 
     def solve(self, grid):
@@ -41,3 +44,20 @@ class Sudoku:
 
     def next(self, i, j):
         return (i, j+1) if j < 8 else (i+1, 0)
+
+board = [
+    [4, 0, 0, 6, 0, 2, 0, 8, 1,],
+    [2, 5, 0, 0, 8, 7, 0, 0, 0,],
+    [0, 0, 6, 0, 0, 0, 2, 4, 0,],
+    [0, 0, 0, 0, 0, 0, 3, 0, 0,],
+    [0, 2, 7, 3, 5, 4, 8, 9, 0,],
+    [0, 0, 5, 0, 0, 0, 0, 0, 0,],
+    [0, 8, 2, 1, 0, 0, 4, 0, 0,],
+    [0, 0, 0, 2, 7, 0, 0, 1, 8,],
+    [6, 1, 0, 8, 0, 9, 0, 0, 5,]]
+
+print('Board init... (0 means blank cell)')
+pprint(board)
+input()
+print('Complete board')
+pprint(Sudoku().solve(board))
