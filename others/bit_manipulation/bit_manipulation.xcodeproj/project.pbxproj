@@ -27,6 +27,7 @@
 		D013CFDD1CAA002100308460 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D013CFE41CAA0A9900308460 /* CCI5-1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CCI5-1.h"; sourceTree = "<group>"; };
 		D07CDCF91CAB0BB2008A0FA9 /* CCI5-3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CCI5-3.h"; sourceTree = "<group>"; };
+		D07CDCFA1CAB52A6008A0FA9 /* CCI5_4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCI5_4.h; sourceTree = "<group>"; };
 		D0BEAF911CAA2BBF00E8E80C /* CCI5-2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CCI5-2.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +64,7 @@
 				D013CFDD1CAA002100308460 /* main.cpp */,
 				D0BEAF911CAA2BBF00E8E80C /* CCI5-2.h */,
 				D07CDCF91CAB0BB2008A0FA9 /* CCI5-3.h */,
+				D07CDCFA1CAB52A6008A0FA9 /* CCI5_4.h */,
 				D013CFE41CAA0A9900308460 /* CCI5-1.h */,
 			);
 			path = bit_manipulation;

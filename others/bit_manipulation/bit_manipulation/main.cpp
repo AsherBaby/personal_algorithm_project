@@ -3,6 +3,7 @@
 #include "CCI5-1.h"
 #include "CCI5-2.h"
 #include "CCI5-3.h"
+#include "CCI5_4.h"
 
 using namespace std;
 
@@ -30,5 +31,6 @@ int main(int argc, const char * argv[]) {
     test_of_CCI5_1();
     test_of_CCI5_2();
     test_of_CCI5_3();
+    test_of_CCI5_4();
     return 0;
 }
