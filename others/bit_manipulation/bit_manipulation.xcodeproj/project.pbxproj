@@ -31,6 +31,7 @@
 		D07CDCF91CAB0BB2008A0FA9 /* CCI5-3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CCI5-3.h"; sourceTree = "<group>"; };
 		D07CDCFA1CAB52A6008A0FA9 /* CCI5_4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCI5_4.h; sourceTree = "<group>"; };
 		D0BEAF911CAA2BBF00E8E80C /* CCI5-2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CCI5-2.h"; sourceTree = "<group>"; };
+		D0EF8D0F1CAC631C003202CA /* CCI5_7.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCI5_7.h; path = bit_manipulation/CCI5_7.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +48,7 @@
 		D013CFD11CAA002100308460 = {
 			isa = PBXGroup;
 			children = (
+				D0EF8D0F1CAC631C003202CA /* CCI5_7.h */,
 				D04465101CAB8470001FEA79 /* CCI5_6.h */,
 				D044650F1CAB8044001FEA79 /* CCI5_5.h */,
 				D013CFDC1CAA002100308460 /* bit_manipulation */,
