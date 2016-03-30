@@ -32,7 +32,6 @@ void test_of_CCI5_3() {
     assert(flipToWin(1775) == 8);
     assert(flipToWin(6) == 3);
     assert(flipToWin(-1) == 32);
-    cout << "All tests passed!" << endl;
 }
 
 #endif /* CCI5_3_h */

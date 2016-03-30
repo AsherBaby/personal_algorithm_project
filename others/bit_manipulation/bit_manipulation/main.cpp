@@ -7,6 +7,7 @@
 #include "CCI5_5.h"
 #include "CCI5_6.h"
 #include "CCI5_7.h"
+#include "CCI5_8.h"
 
 using namespace std;
 
@@ -38,5 +39,7 @@ int main(int argc, const char * argv[]) {
     test_of_CCI5_5();
     test_of_CCI5_6();
     test_of_CCI5_7();
+    test_of_CCI5_8();
+    cout << "All tests passed!" << endl;
     return 0;
 }
